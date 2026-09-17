@@ -18,7 +18,7 @@ int main() {
             default: printf("Invalid Input\n");
         }
         printf("Enter the grade (1-4, negative will leave the loop): ");
-        while ((tmp = getchar()) != '\n')
+        while ((tmp = getchar()) != '\n');
             grade = tmp;
     }
     return 0;

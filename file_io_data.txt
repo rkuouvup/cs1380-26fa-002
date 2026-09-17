@@ -1,0 +1,4 @@
+1 Amy CS 4
+2 Betty EE 3.5
+3 Cindy CS 2.7
+4 Daisy EE 3.2
