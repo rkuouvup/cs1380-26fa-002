@@ -6,6 +6,7 @@ int main() {
     int *vptr1 = &a[0];
     double *vptr2 = &d[0];
 
+    printf("a:\t\t%p\n", a);
     printf("&a[0]:\t\t%p\n", &a[0]);
     printf("vptr1:\t\t%p\n", vptr1);
     printf("*vptr1:\t\t%d\n", *vptr1);
@@ -13,6 +14,12 @@ int main() {
     printf("*(vptr1 + 1):\t%d\n", *(vptr1 + 1));
     printf("a[1]:\t\t%d\n", a[1]);
     printf("vptr1[1]:\t%d\n", vptr1[1]);
+
+    vptr1++;    // vptr1 = vptr1 + 1;
+    printf("*vptr1:\t\t%d\n", *vptr1);
+    //a = a + 1;
+
+
     printf("vptr2:\t\t%p\n", vptr2);
     printf("vptr2 + 1:\t%p\n", vptr2 + 1);
     return 0;
