@@ -26,5 +26,8 @@ int main() {
     for (int i = 0; i < n; i++)
         printf("%d\t", *(p + i));
     printf("\n");
+
+    free(p);
+
     return 0;
 }
