@@ -1,9 +1,15 @@
 #include <stdio.h>
 
-/*void foo(int a[]) {
+/*void foo(int *a, int size_row, int size_col, int index_i, int index_j) {
     printf("===== In foo =====\n");
     printf("sizeof a: %zu\n", sizeof(a));
 }*/
+
+//void foo(int (*a)[3]) {
+void foo(int a[][3]) {
+    printf("=================\n");
+    printf("a: %p\n", a);
+}
 
 int main() {
     int a1[] = {1, 2, 3, 4, 5};
@@ -28,12 +34,30 @@ int main() {
         for (int j = 0; j < 3; j++)
             printf("&a2[%d][%d]:\t%p\n", i, j, &a2[i][j]);
     printf("=======================\n");
-    int (*p2)[3] = a2;
+    int (*p2)[3] = a2;  // int (*p2)[3] = a2[0];
+    int *p3 = &a2[0][0];
+    printf("*p3:\t%d\n", *p3);
+    printf("*(p3+1):\t%d\n", *(p3+1));
+    printf("*(p3+(1*3)+1):\t%d\n", *(p3+(1*3)+1));
+    printf("=======================\n");
     printf("a2:\t%p\n", a2);
     printf("p2:\t%p\n", p2);
     printf("p2+1:\t%p\n", p2+1);    // p2[1]
 
     printf("sizeof(p2): %zu\n", sizeof(p2));
     printf("sizeof(*p2): %zu\n", sizeof(*p2));
+    printf("p2[1]: %p\n", p2[1]);
+    printf("*(p2+1): %p\n", *(p2+1));
+    printf("*(*(p2+1)+1): %d\n", *(*(p2+1)+1));
+    printf("p2[1][1]: %d\n", p2[1][1]);
+    printf("=======================\n");
+    printf("p2:\t\t%p\n", p2);
+    printf("p2+1:\t\t%p\n", p2+1);
+    printf("&p2[1][1]:\t%p\n", &p2[1][1]);
+    printf("(p2+1)+1:\t%p\n", (p2+1)+1);    // p2+2
+    printf("(p2+1)+1:\t%p\n", *(p2+1)+1);
+    foo(a2);
+
+
     return 0;
 }
